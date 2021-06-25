@@ -16,4 +16,3 @@ Sample Input: A extrapolated spline equation connecting the three points, follow
 ```
 
 Output:
- 
