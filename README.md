@@ -17,4 +17,4 @@ Sample Input:
 ```
 
 Sample Output:
-![alt text](https://github.com/[MrinallU]/[FTC-Cubic-Spline-Interpolation]/blob/[branch]/Capture.jpg?raw=true)
+![alt text](https://github.com/[MrinallU]/[FTC-Cubic-Spline-Interpolation]/blob/[branch]/Capture.JPG?raw=true)
