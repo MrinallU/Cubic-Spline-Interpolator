@@ -129,13 +129,14 @@ public class Spline {
             System.out.println(coefficients[i + 2]);
             System.out.println(coefficients[i + 3]);
             System.out.println();
-            for (double j = p[i / 4].x; j <= p[(i / 4) + 1].x; j += 0.01) {
+            for (double j = p[i / 4].x; j <= p[(i / 4) + 1].x; j += 0.01) { // Edit increments as needed
                 BigDecimal a = coefficients[i].multiply(BigDecimal.valueOf(j).pow(3, MathContext.DECIMAL64));
                 BigDecimal b = coefficients[i + 1].multiply(BigDecimal.valueOf(j).pow(2, MathContext.DECIMAL64));
                 BigDecimal c = coefficients[i + 2].multiply(BigDecimal.valueOf(j));
                 BigDecimal d = coefficients[i + 3];
-                System.out.println(j);
-                 series.add(j, a.add(b).add(c).add(d));
+                series.add(j, a.add(b).add(c).add(d));
+                // Place moveToPosition function for odometry here if needed.
+                // j = x and a.add(b).add(c).add(d) = y 
             }
         }
 
