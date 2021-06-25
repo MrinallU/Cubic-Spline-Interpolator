@@ -17,4 +17,5 @@ Sample Input:
 ```
 
 Sample Output:
+
 ![alt text](https://github.com/MrinallU/FTC-Cubic-Spline-Interpolation/blob/main/Capture.JPG?raw=true)
