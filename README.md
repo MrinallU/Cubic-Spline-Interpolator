@@ -1,8 +1,10 @@
 # Cubic-Spline-Interpolation
+
 A Java implementation of a cubic spline interpolation and mapping program for FTC robotics. Compatible with odometry functions for smoother and more efficient path construction.
 
 # Instructions
-Enter the n number of points followed by the points themselves. 
+
+Enter the n number of points followed by the points themselves.
 
 Sample Input:
 3
