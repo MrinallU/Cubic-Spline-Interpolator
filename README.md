@@ -5,9 +5,9 @@ A Java implementation of a cubic spline interpolation and mapping program for FT
 # Instructions
 
 Input: Enter the N number of points followed by the points themselves.
-Output: A extrapolated cubic spline equation connecting all N points along with a graph displaying the spline path. 
+Output: A extrapolated cubic spline equation connecting all N points along with a graph displaying the spline path.
 
-Sample Input: 
+Sample Input:
 
 ```
 3
