@@ -136,7 +136,9 @@ public class Spline {
                 BigDecimal d = coefficients[i + 3];
                 series.add(j, a.add(b).add(c).add(d));
                 // Place moveToPosition function for odometry here if needed.
-                // j = x and a.add(b).add(c).add(d) = y 
+                // xPos = j 
+                // yPos = a.add(b).add(c).add(d)  
+                // angle = ??
             }
         }
 
