@@ -3,21 +3,13 @@ import java.math.MathContext;
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.Scanner;
-// JFree
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
-import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RefineryUtilities;
+
 
 /**
  * @author Mrinall Umasudhan
  */
 public class Spline {
-    public static XYSeries series = new XYSeries("Spline Data");
+    
     static Point [] points;
     public static void main(String [] args){
         Scanner sc = new Scanner(System.in);
@@ -26,7 +18,7 @@ public class Spline {
         for (int i = 0; i < n; i++) {
             points[i] = new Point(sc.nextDouble(), sc.nextDouble());
         }
-
+        System.out.println(); 
         Arrays.sort(points);
         cubicSplineInterpolation(points);
 
@@ -122,30 +114,30 @@ public class Spline {
 
         BigDecimal [][] functions = new BigDecimal[points.length - 1][4];
         // need better test data
-
+        int pI = 1; 
         for (var i = 0; i < coefficients.length; i += 4) {
-            System.out.println(coefficients[i]);
-            System.out.println(coefficients[i + 1]);
-            System.out.println(coefficients[i + 2]);
-            System.out.println(coefficients[i + 3]);
+             
+            System.out.println("Coefficients for points " + pI + " & " + (pI + 1)); 
+            System.out.println("a = " + coefficients[i]);
+            System.out.println("b = " + coefficients[i + 1]);
+            System.out.println("c = " + coefficients[i + 2]);
+            System.out.println("d = " + coefficients[i + 3]);
             System.out.println();
+            
             for (double j = p[i / 4].x; j <= p[(i / 4) + 1].x; j += 0.01) { // Edit increments as needed
                 BigDecimal a = coefficients[i].multiply(BigDecimal.valueOf(j).pow(3, MathContext.DECIMAL64));
                 BigDecimal b = coefficients[i + 1].multiply(BigDecimal.valueOf(j).pow(2, MathContext.DECIMAL64));
                 BigDecimal c = coefficients[i + 2].multiply(BigDecimal.valueOf(j));
                 BigDecimal d = coefficients[i + 3];
-                series.add(j, a.add(b).add(c).add(d));
+
                 // Place moveToPosition function for odometry here if needed.
                 // xPos = j 
                 // yPos = a.add(b).add(c).add(d)  
                 // angle = ??
             }
+            ++pI; 
         }
-
-        Graph  g = new Graph("Cubic Spline Path");
-        g.pack();
-        RefineryUtilities.centerFrameOnScreen(g);
-        g.setVisible(true);
+ 
     }
 
     public static BigDecimal [][] rref(BigDecimal[][] mat) {
@@ -200,31 +192,5 @@ public class Spline {
             if (this.x == o.x) return 0;
             return 1;
         }
-    }
-
-    public static class Graph extends ApplicationFrame {
-
-
-        public Graph(final String title) {
-            super(title);
-
-            final XYSeriesCollection data = new XYSeriesCollection(series);
-            final JFreeChart chart = ChartFactory.createXYLineChart(
-                    "Generated Spline",
-                    "X",
-                    "Y",
-                    data,
-                    PlotOrientation.VERTICAL,
-                    true,
-                    true,
-                    false
-            );
-
-            final ChartPanel chartPanel = new ChartPanel(chart);
-            chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
-            setContentPane(chartPanel);
-
-        }
-
     }
 }
