@@ -1,4 +1,4 @@
-# Cubic-Spline-Interpolation
+# Cubic-Spline-Interpolator
 
 A Java implementation of a cubic spline interpolation and mapping program for FTC robotics. Compatible with odometry functions for smoother and more efficient path construction. Graphing powered by JFree charts.
 
