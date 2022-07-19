@@ -12,10 +12,11 @@ Output: A extrapolated cubic spline equation connecting all N points along with 
 Sample Input:
 
 ```
-3
+4
 1 2
+4 3
 3 4
-5 1
+2 1
 ```
 
 Sample Output:
