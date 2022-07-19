@@ -12,11 +12,15 @@ Output: A extrapolated cubic spline equation connecting all N points along with 
 Sample Input:
 
 ```
-4
-1 2
-4 3
-3 4
-2 1
+8
+9 16
+22 22
+41 19
+53 8
+60 -51
+38 -53
+15 -45
+0 0
 ```
 
 Sample Output:
