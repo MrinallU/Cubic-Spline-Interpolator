@@ -7,7 +7,7 @@ Moreover, program crash when plugging in consecutive points with the same x coor
 # Instructions
 
 Input: Enter the N number of points followed by the points themselves.
-Output: A extrapolated cubic spline equation connecting all N points along with a graph displaying the spline path.
+Output: An interpolated cubic spline equation connecting all N points along with a graph displaying the spline path.
 
 Sample Input:
 
